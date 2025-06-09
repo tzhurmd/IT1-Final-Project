@@ -1,0 +1,7 @@
+.nav-bar ul{
+    list-style-type: none;
+}
+body{
+    background: linear-gradient(180deg, #152238 0%, #2E7287 70%, #EDC9AF 100%) fixed;
+    height:100%;
+}
