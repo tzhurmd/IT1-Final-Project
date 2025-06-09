@@ -1,16 +1,50 @@
 #nav-bar{
   position: fixed;
   color:white;
-  top:10px;
-  right:10px;
+  top:0;
+  text-align: center;
+  background: #072F5F;
+  width:100%;
+  height:50px;
 }
 .nav-link {
   text-decoration:none;
-  margin-left:10px;
+  margin-left:50px;
   color:white;
-  padding-top:10px;
+  font-size: 40px;
+  top:0;
+  position:relative;
 }
 body{
     background: linear-gradient(180deg, #152238 0%, #2E7287 70%, #EDC9AF 100%) fixed;
-    height:100%;
+    color: #f7f9fc;
+}
+#nav-bar a:hover{
+  color:#EDC9AF;
+}
+#intro{
+  text-align: center;
+  font-size: 50px;
+  padding-top: 500px;
+  margin-bottom: 800px;
+}
+#tutorial{
+  margin-top: 1500px;
+  padding-top:100px;
+  padding-bottom: 1000px;
+}
+#tutorial-text{
+  text-align:center;
+  font-size: 65px;
+  text-decoration: underline;
+}
+#play{
+  margin-top: 1500px;
+  padding-top:80px;
+  padding-bottom: 1000px;
+}
+#play-text{
+  text-align:center;
+  font-size: 65px;
+  text-decoration: underline;
 }
