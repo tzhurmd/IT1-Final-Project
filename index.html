@@ -24,8 +24,61 @@
         </section>
         <section id="play">
           <h1 id="play-text">Play!</h1>
-          <div class="cards-container">
-            <>
+          <div class="game-container">
+            <div class="cover">
+              <div class="cup"></div>
+            </div>
+            <div class="dice show-1" id="dice1">
+              <div class="dot" data-position="1"></div>
+              <div class="dot" data-position="2"></div>
+              <div class="dot" data-position="3"></div>
+              <div class="dot" data-position="4"></div>
+              <div class="dot" data-position="5"></div>
+              <div class="dot" data-position="6"></div>
+              <div class="dot" data-position="7"></div>
+              <div class="dot" data-position="8"></div>
+              <div class="dot" data-position="9"></div>
+            </div>
+            <div class="dice show-2" id="dice2">
+              <div class="dot" data-position="1"></div>
+              <div class="dot" data-position="2"></div>
+              <div class="dot" data-position="3"></div>
+              <div class="dot" data-position="4"></div>
+              <div class="dot" data-position="5"></div>
+              <div class="dot" data-position="6"></div>
+              <div class="dot" data-position="7"></div>
+              <div class="dot" data-position="8"></div>
+              <div class="dot" data-position="9"></div>
+            </div>
+            <div class="betting">
+              <span>Balance: </span>
+              <span id="balance">100</span>
+              <input type="number" id="bet-amount" min="1" max="100" value="10" placeholder="Bet amount">
+              <div class="bet-options">
+                <input type="radio" id="odd-even" name="bet-type" checked>
+                <label for="odd-even">Odd/Even (2x)</label>
+                <input type="radio" id="specific-num" name="bet-type">
+                <label for="specific-num">Specific Number (10x)</label>
+              </div>
+              <div class="number-select hidden">
+                <select id="number-pick">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select>
+              </div>
+              <div class="odd-even-select hidden">
+                <option value="1">Odd</option>
+                <option value="2">Even</option>
+              </div>
+              <button id="roll-dice">Roll Dice</button>
+            </div>
+            <div id="result" class="hidden">
+              <p id="result-message"></p>
+            </div>
           </div>
         </section>
     </main>
