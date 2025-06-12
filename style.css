@@ -40,25 +40,23 @@ body{
   font-size: 65px;
   text-decoration: underline;
 }
-#play {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: calc(100vh - 50px); 
-}
+
 #play-text{
   text-align:center;
   font-size: 65px;
   text-decoration: underline;
 }
-.game-container{
-  padding:50px;
-  width: 90%;
-  margin:0 auto;
-  align-items: center;
+
+
+
+
+.dice-container{
   display: flex;
-  flex-direction: column;
+  gap:30px;
+  justify-content: center;
+  padding: 20px;
+  width: 1100px;
+  height: 1100px;
 }
 .hidden{
   display:none;
@@ -69,23 +67,64 @@ body{
   height: 20px;
   background: black;
   border-radius: 50%;
-  margin:auto; 
-  position:relative; 
+
 }
 .dice {
-  background:white;
-  border-radius: 12px;
+  background: white;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  border-radius: 10%;
+  grid-template-areas:
+    "a b c"
+    "d e f"
+    "g h i";
   gap: 5px;
   width: 100px;
   height: 100px;
-
+  place-items: center;
+  position: relative;
+}
+.dice .dot[data-position="1"] { grid-area: a; }
+.dice .dot[data-position="2"] { grid-area: b; }
+.dice .dot[data-position="3"] { grid-area: c; }
+.dice .dot[data-position="4"] { grid-area: d; }
+.dice .dot[data-position="5"] { grid-area: e; }
+.dice .dot[data-position="6"] { grid-area: f; }
+.dice .dot[data-position="7"] { grid-area: g; }
+.dice .dot[data-position="8"] { grid-area: h; }
+.dice .dot[data-position="9"] { grid-area: i; }
+.show-1 .dot[data-position="1"] {
+  grid-area: e  ;
+  display:block;
+}
+.show-2 .dot[data-position="3"],
+.show-2 .dot[data-position="7"] {
+  display: block;
+}
+.show-3 .dot[data-position="1"], .show-3 .dot[data-position="5"], .show-3 .dot[data-position="9"]{
+  display: block;
+}
+.show-4 .dot[data-position="1"], .show-4 .dot[data-position="3"], .show-4 .dot[data-position="9"], .show-4 .dot[data-position="7"]{
+  display: block;
+}
+.show-5 .dot[data-position="1"], .show-5 .dot[data-position="3"], .show-5 .dot[data-position="9"], .show-5 .dot[data-position="7"], .show-5 .dot[data-position="5"]{
+  display: block;
+}
+.show-6 .dot[data-position="1"], .show-6 .dot[data-position="3"], .show-6 .dot[data-position="4"], .show-6 .dot[data-position="6"], .show-6 .dot[data-position="7"], .show-6 .dot[data-position="9"]{
+  display: block;
 }
 
-.show-1 .dot[data-position="9"] { 
-  display: inline-block; 
+
+
+#play{
+  margin-bottom: 500px;
+  padding-top: 500px;
+  padding-bottom: 500px;  
+  position:flex;
+  justify-content: center;
 }
-.show-2 .dot[data-position="5"] { 
-  display: grid; 
+.betting{
+  font-size: 50px;
+  position:relative;
+  right: -25vw;
+  top:-9vh;  
 }
