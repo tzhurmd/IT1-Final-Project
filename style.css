@@ -50,14 +50,7 @@ body{
 
 
 
-.dice-container{
-  display: flex;
-  gap:30px;
-  justify-content: center;
-  padding: 20px;
-  width: 1100px;
-  height: 1100px;
-}
+
 .hidden{
   display:none;
 }
@@ -115,16 +108,113 @@ body{
 
 
 
-#play{
-  margin-bottom: 500px;
-  padding-top: 500px;
-  padding-bottom: 500px;  
-  position:flex;
-  justify-content: center;
+#play {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  position: relative;
 }
-.betting{
-  font-size: 50px;
-  position:relative;
-  right: -25vw;
-  top:-9vh;  
+.betting {
+  position: static;
+  right: auto;
+  top: auto;
+  transform: none;
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
 }
+#roll-dice {
+  font-size: 1.5rem;
+  background: #072F5F;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+  width: auto; 
+}
+
+.dice-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin:0;
+}
+
+@media (max-width: 768px) {
+  #roll-dice {
+    padding: 12px 30px;
+    font-size: 1.5rem;
+  }
+}
+
+
+
+.cup-container {
+  position: absolute;
+  width: 120px;
+  height: 150px;
+  top: 40%;
+  left: 47.8%;
+  transform: translate(-50%, -50%);
+  z-index: 8;
+}
+
+.cup {
+  width: 147%;
+  height: 160%;
+  background: #f5f5f5;
+  border-radius: 60% 60% 0 0;
+  transform-origin: bottom center;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  25% { transform: translateX(-10px) rotate(-5deg); }
+  75% { transform: translateX(10px) rotate(5deg); }
+}
+
+.shaking {
+  animation: shake 0.4s ease-in-out;
+}
+
+.revealing {
+  animation: lift-up 0.5s forwards;
+}
+
+@keyframes lift-up {
+  100% { 
+    transform: translateY(-120px) rotate(10deg);
+    opacity: 0;
+  }
+}
+
+.dice-container {
+  position: relative; 
+  z-index: 5;
+}
+#result {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(7, 47, 95, 0.9);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 100;
+  text-align: center;
+}
+
+#result.show {
+  opacity: 1;
+}
+
+
